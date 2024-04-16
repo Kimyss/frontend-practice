@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <style>
+    .btn-shake{
+      padding: 15px 20px;
+      font-size: 20px;
+      background-color: skyblue;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    @keyframes shake {
+      0% {transform: rotate(0deg);}
+      50% {transform: rotate(20deg);}
+      100%{transform: rotate(0deg);}
+    } 
+
+    .btn-shake:hover{
+      animation-name: shake;
+      animation-duration: 1s;
+    }
+     
+    #modal{
+        width: 300px;
+        height: 200px;
+        border: 1px solid lightgray;
+        border-radius: 6px;
+        background-color: whitesmoke;
+        padding: 20px;
+      }
+
+
+    .shake-hard{
+      animation: shake-hard 0.4s;
+    }
+    
+    @keyframes shake-hard {
+      0%{transform: rotate(0deg)};
+      10% { transform: rotate(-1deg); }
+      20% { transform: rotate(1deg); }
+      30% { transform: rotate(0deg); }
+      40% { transform: rotate(1deg); }
+      50% { transform: rotate(-1deg); }
+      60% { transform: rotate(0deg); }
+      70% { transform: translate(10px,10px) rotate(-1deg); }
+      80% { transform: rotate(1deg); }
+      90% { transform: rotate(0deg); }
+      100% { transform: rotate(-1deg); }
+    }
+    
+    .material-icons{
+      font-size: 70px;
+      cursor: pointer;
+    }
+
+    @keyframes turn {
+      0%{transform: rotate(0deg);}
+      25%{transform: rotate(25deg);}
+      50%{transform: rotate(50deg);}
+      75%{transform: rotate(75deg);}
+      100%{transform: rotate(99deg);}
+    }
+    
+    .material-icons:hover{
+      animation-name: turn;
+      animation-duration: 1s;
+      /* animation-fill-mode: forwards; */
+      animation: turn 1s forwards;
+      animation-iteration-count: 3;
+    }
+    /* Animate.css */
+    
+
+
+  </style>
+</head>
+<body>
+  <h2>애니메이션 만들기</h2>
+  <button type="button" class="btn-shake">흔들흔들</button>
+
+  <h2>Tip! 애니메이션을 이용한 창 만들기</h2>
+  <div id="modal">
+    <label for="age">나이</label>
+    <input type="text" id="age">
+    <button type="button" onclick="shakeModal()">등록</button>
+  </div>
+
+  <h2>turn 애니메이션 만들기</h2>
+  <span class="material-icons">add</span>
+
+  <script>
+const modalEl = document.getElementById('modal');
+const ageInputEl = document.getElementById('age')
+
+function shakeModal() {
+  if (ageInputEl.value==='') {
+    modalEl.classList.add('shake-hard')
+  }
+  setTimeout(function () {
+    modalEl.classList.remove('shake-hard');
+  }, 500)
+}
+  </script>
+</body>
+</html>

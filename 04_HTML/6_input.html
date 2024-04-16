@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .placerholder-hidden:focus::placeholder{
+      color: transparent;
+    }
+  </style>
+</head>
+<body>
+  <input type="text">
+  <br>
+  <input type="text" value="bbq5883">
+  <br>
+  <input type="text" placeholder="검색어를 입력하세요www">
+  <br>
+  <input type="text" placeholder="검색어를 입력하세요www" class="placerholder-hidden">
+  <br>
+  <input type="text" disabled>
+  <br>
+  <input type="text" value="read only 읽기전용" readonly>
+
+  <hr>
+
+  <input type="checkbox"> Apple
+  <input type="checkbox"> Banana
+
+  <br>
+  <label>
+    <input type="checkbox"> Apple
+  </label>
+  <label>
+    <input type="checkbox"> Banana
+  </label>
+
+  <br>
+  <!-- 또는 -->
+  <input type="checkbox"id="apple">
+  <label for="apple">Apple</label>
+  <input type="checkbox"id="banana">
+  <label for="banana">banana</label>
+
+
+</body>
+</html>

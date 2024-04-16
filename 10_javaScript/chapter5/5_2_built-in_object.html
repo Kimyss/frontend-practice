@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 내장객체 (JS기본제공)
+
+    // 1. String 객체
+    // 두가지방식
+    // 변수 = new String(문자);
+    // 변수 = '문자'; => 리터럴 방식
+    document.write('<h1>String 객체</h2>');
+
+    // 1)length
+
+    document.write('<h4>문자열 길이 indexof(), lastIndexOf(),  includes()</h4>');
+    const txt = 'ABCDEFGHIJKLMNOPQRSUVWXYZ';
+    const sin = txt.length;
+    document.write(sin, '<br>');
+
+    // 2)indexof();
+    document.write('<h4>문자열검색 indexof();</h4>');
+    let str = 'Please locate where "locate" occurs!';
+    let pos = str.indexOf('locate');
+    document.write(pos, '<br>');
+
+    // 3)lastIndexOf();
+    pos = str.lastIndexOf('locate');
+    document.write(pos, '<br>');
+
+    // 검색 시작 위치 지정
+    pos = str.indexOf('locate', 15);  //어쨌든 앞에서
+    document.write(pos, '<br>');
+
+    pos = str.lastIndexOf('locate', 15);
+    document.write(pos, '<br>');
+
+    // (ES6차) includes(); 포함된 문자열 있으면 true 없으면 false
+    pos = str.includes('locate');
+    document.write(pos, '<br>');
+    pos = str.includes('locate', 15);
+    document.write(pos, '<br>');
+
+    document.write('<h4>실습: 이메일 주소 유효성 검사</h4>');
+
+    // const userEmail = prompt('이메일주소?');
+    // const arrUrl = ['.co.kr', '.com', '.net', '.or.kr', '.go.kr'];
+
+    // let check1 = false;
+    // let check2 = false;
+    // if (userEmail.indexOf('@') > 0) {
+    //   check1 = true;
+    // }
+    // for (let i = 0; i < arrUrl.length; i++) {
+    //   if (userEmail.indexOf(arrUrl[i])) {
+    //     check2 = true;
+    //     break;
+    //   }
+    // }
+    // if (check1 && check2) {
+    //   document.write(userEmail);
+    // } else {
+    //   alert('이메일다시');
+    // }
+
+    // (참고) 정규표현식
+
+    // 4) Slice()
+    document.write('<h4>문자열 추출 Slice(), substring(),substr() </h4>');
+    str = 'one, two, three, four';
+    let res = str.slice(10, 15);
+    document.write(res, '<br>');
+    // 두번째 인수 생략하면,
+    res = str.slice(5);
+    document.write(res, '<br>');
+    // 첫번째 인수 마이너스면
+    res = str.slice(-12);
+    document.write(res, '<br>');
+
+    // 5) substring() 
+    // slice()와 동일 마이너스 허용X
+    res = str.substring(5);
+    document.write(res, '<br>');
+
+    // 6)substr()
+    res = str.substr(5, 9);
+    document.write(res, '<br>');
+    res = str.substr(7);
+    document.write(res, '<br>');
+    res = str.substr(-13);
+    document.write(res, '<br>');
+
+    // 7)replace()
+    document.write('<h4>문자열 변환 replace() </h4>');
+
+    str = 'Please visit Seoul and Seoul!';
+    let n = str.replace('Seoul', 'Jeju');
+    document.write(n, '<br>');
+
+    // 대소문자 구분
+    n = str.replace('SEOUL', 'Jeju');   //안바뀜
+    document.write(n, '<br>');
+
+    // 정규 표현식과 함께 사용
+    n = str.replace(/SEOUL/i, 'Jeju'); // i=insensitive, 대소문자를 구분하지 않겠다는 뜻
+    document.write(n, '<br>');
+    n = str.replace(/Seoul/g, 'Jeju'); // g=global, 일치하는 모든 문자열을 찾겠다는 뜻
+    document.write(n, '<br>');
+
+    // 8) toUpperCase(), toLowerCase()
+    // 문자열을 모두 대문자로 변경
+    let text1 = 'Hello World!';
+    let text2 = text1.toUpperCase();
+    document.write(text2, '<br>');
+
+    // 문자열을 모두 소문자로 변경
+    text2 = text1.toLowerCase();
+    document.write(text2, '<br>');
+
+    // 실습: 주민번호 노출 안되게
+    // document.write('<h4>실습: 주민등록번호 마스킹</h4>');
+    // const userSsn = prompt('주민번호입력', '891018-1******');
+    // const user = userSsn.slice(0, (userSsn.length - 6)) + '******';
+    // document.write(user, '<br>');
+    // document.write(userSsn.substr(0, 8) + '******', '<br>');
+
+
+    // 9) concat()
+    // 2개 이상의 문자열을 하나의 문자열로 합치고 새 문자열로 반환
+    document.write('<h4>문자열 결합 concat(), trim()</h4>');
+    text1 = "BATTLE";
+    text2 = "GROUND";
+    let text3 = text1.concat(' ', text2, '<br>');
+    document.write(text3);
+    let text4 = text1 + '   ' + text2;
+    document.write(text4, '<br>');
+
+    // 10) trim
+    // 문자열의 앞, 뒤 공백을 모두 제거
+    str = "    ZoolZa   ";
+    console.log(str);
+    console.log(str.trim());
+
+    // // 11) charAt()
+    // // 문자열에서 특정 인덱스에 해당하는 문자 하나를 반환
+    document.write('<h4>특정 문자 1개 추출 charAt(), charCodeAt()</h4>');
+    str = "Big Bang";
+    document.write(str, '<br>');
+    let kor = "가나다라마바사아자차카타파하";
+
+    // // 12) charCodeAt()
+    // // 문자열에서 특정 인덱스에 해당하는 문자 하나의 유니코드 값을 반환
+    document.write(str.charCodeAt(0), '<br>');
+    document.write(kor.charCodeAt(7), '<br>');
+
+    // // 13) split()
+    // 특정 구분자를 기준으로 문자열을 분리해서 배열로 반환
+    document.write('<h4>문자열 배열로 쪼개기, split()</h4>');
+    const birthday = '2022-10-15';
+    const arrBirthday = birthday.split('-'); // 하이픈(-)을 기준으로 문자열을 분리
+    console.log(arrBirthday);
+
+
+    // 2.Array 객체
+    // 1) 변수 = new (값1, 값2, 값3);
+
+    // 2) 변수 = new Array();
+    // 변수[0] = 1;
+    // 변수[1] = 2;
+    // 변수[2] = 3;
+
+    // 3) 변수 = [값1, 값2, 값3];  => 리터럴 방식
+
+    document.write('<h1>Array 객체</h1>');
+
+    arrAnimal = ['pig', 'horse', 'tiger', 'lion'];
+
+    arrAnimal[3] = 'snake';
+    console.log(arrAnimal);
+
+    document.write('<h4>배열값 가져오기-1 </h4>');
+    document.write(arrAnimal[0], '<br>');
+    document.write(arrAnimal[1], '<br>');
+    document.write(arrAnimal[2], '<br>');
+
+    document.write('<h4>배열값 가져오기-2 (for문)</h4>');
+    for (let i = 0; i < arrAnimal.length; i++) {
+      document.write(arrAnimal[i], '<br>');
+    }
+
+    document.write('<h4>배열값 가져오기-3 (in arr) (권장안함) </h4>');
+    for (const el of arrAnimal) {
+      document.write(el, '<br>');   //value값 가져옴
+    }
+
+    document.write('<h4>배열값 가져오기-5 (for each)</h4>');
+    arrAnimal.forEach(function (element, index) {
+      document.write(index, ': ', element, '<br>');
+    });
+
+    // 배열의 메소드(함수)
+
+    //  toString()
+    let perons = ['Kim', 'Lee', 'Choi', 'Park'];
+    console.log([perons.toString]);
+    document.write({ name: 'kim' });
+
+    // join()
+    console.log(perons.join('--'));
+
+    // pop()
+    let x = perons.pop();
+    console.log(x);
+    console.log(perons);
+
+    // shift()
+    x = perons.shift();
+    console.log(x);
+    console.log(perons);
+
+    // push()
+    x = perons.push();
+    console.log(x);
+    console.log(perons);
+
+    // unshift()
+    x = perons.unshift('Doo');
+    console.log(perons);
+
+    // splice()
+    perons.splice(3, 0, 'Kwon', 'Moon', 'DDD');  // 앞숫자 넣고 뒷숫자번째 제거
+    console.log(perons);
+    perons.splice(5, 6, 'shin');
+    console.log(perons);
+
+    // concat()
+    const grade1 = ['zoolza', 'moonjung2'];
+    const grade2 = ['dbss26', 'hobakgoguma96'];
+    const grade3 = ['ozalgong', 'moongsoon2'];
+    const gradeAll = grade1.concat(grade2, grade3);
+    console.log(gradeAll);
+
+    // slice()
+    fruits = ['Banana', 'Orange', 'Lemon', 'Apple', 'Mango'];
+    const citrus = fruits.slice(2);
+    console.log(citrus);
+    const citrus2 = fruits.slice(1, 3);
+    console.log(citrus2);
+
+    // sort()
+    fruits = ['Banana', 'Orange', 'Apple', 'Mango'];
+    fruits.sort();
+    console.log(fruits);
+
+    let kor2 = ['나', '다', '가', '마', '라'];
+    kor2.sort();
+    console.log(kor2);
+
+    const points = [40, 100, 1, 5, 25, 10];
+    points.sort();
+    console.log(points);
+
+    points.sort(function (a, b) {
+      return a - b;
+    })
+    console.log(points);
+
+    points.sort(function (a, b) { return b - a });
+    console.log(points);
+
+    // 활용 Tip 점수 높은순 정렬
+    const persons = [
+      {
+        name: '유재석',
+        point: 78,
+        city: '서울',
+      },
+      {
+        name: '김종국',
+        point: 92,
+        city: '서울',
+      },
+      {
+        name: '양세찬',
+        point: 76,
+        city: '제주',
+      },
+      {
+        name: '하하',
+        point: 81,
+        city: '서울',
+      },
+    ];
+
+    persons.sort(function (a, b) {
+      return b.point - a.point;
+    });
+    console.log(persons);
+
+    // reverse()
+    fruits = ['Banana', 'Orange', 'Apple', 'Mango'];
+    fruits.sort();
+    console.log(fruits);
+    fruits.reverse();
+    console.log(fruits);
+
+    // indexOf(), lastIndexOf()
+    fruits = ['Banana', 'Orange', 'Apple', 'Mango', 'Apple'];
+    let index = fruits.indexOf('Apple');
+    console.log(index);
+    index = fruits.indexOf('Apple', 3);
+    console.log(index);
+    index = fruits.lastIndexOf("Apple");
+    console.log(index);
+
+    // (ES 7차) includes();
+    index = fruits.includes('Mango');
+    console.log(index);
+    index = fruits.includes('Banana', 2);
+    console.log(index);
+
+
+    // 3.Math 객체
+    document.write('<h1>Math 객체</h1>');
+
+    // 속성
+    document.write('<h4>원주율 PI</h4>');
+    document.write(Math.PI, '<br>');
+
+    // Math.round()
+    document.write('<h4>round() 소수첫째반올림</h4>');
+    document.write(Math.round(2.5), '<br>');
+    document.write(Math.round(3.7), '<br>');
+    document.write(Math.round(2.3), '<br>');
+
+    document.write('<br>');
+
+    // Math.ceil
+    document.write('<h4>ceil() 무조건올림</h4>');
+    document.write(Math.ceil(1.3), '<br>');
+    document.write(Math.ceil(2.8), '<br>');
+    document.write(Math.ceil(3.1), '<br>');
+    // 사용예
+    // 50 / 15 = 3.33333333.....  Math.ceil(50 / 15)  =4;
+    // 총페이지수  = Math.ceil(총아이템수 / 한페이지당 보이는 아이템수)
+
+    // Math.floor()
+    document.write('<h4>floor() 무조건내림</h4>');
+    document.write(Math.floor(9.9), '<br>');
+    document.write(Math.floor(8.8), '<br>');
+    document.write(Math.floor(6.7), '<br>');
+
+    // Math.trunc()
+    document.write('<h4>trunc() 소수버리고 정수부분만</h4>');
+    document.write(Math.trunc(9.9), '<br>');
+    document.write(Math.trunc(8.1), '<br>');
+    document.write(Math.trunc(7.7), '<br>');
+    document.write(Math.trunc(6.5), '<br>');
+
+    // math.sign()
+    document.write('<h4>sign()</h4>');
+    document.write(Math.sign(-17), '<br>');
+    document.write(Math.sign(5), '<br>');
+    document.write(Math.sign(20), '<br>');
+
+    // Math.pow()
+    document.write('<h4>pow(a, b) a의 b제곱 </h4>');
+    document.write(Math.pow(2, 6), '<br>');
+
+    // (ES 7차)지수연산자
+    document.write('<h5>(ES6차)지수연산자</h5>');
+    document.write(Math.pow(2, 9), '<br>');
+    document.write(2 ** 3 ** 2, '<br>');
+
+    // Math.sqrt()
+    document.write('<h4>sqrt() 제곱근반환</h4>')
+    document.write(Math.sqrt(49), '<br>');
+
+    // Math.min()   Math.max()
+    document.write('<h4>max(), min()  최대값, 최소값 반환</h4>');
+    document.write(Math.min(0, 150, 30, 20, -8, -200), '<br>');
+    document.write(Math.max(0, 150, 30, 20, -8, -200), '<br>');
+
+    // Math.random()
+    document.write('<h4>random()</h4>')
+    document.write(Math.random(), '<br>');    //랜덤 숫자반환
+
+    // 응용
+    document.write('<h4>1에서 10사이의 랜덤한 정수</h4>');
+
+    const randomNum = Math.random();
+
+    // 0.0 <= Math.random() < 1.0
+    document.write(randomNum, '<br>');
+    // 0.0 <= Math.random() * 10 < 10.0
+    document.write(randomNum * 10, '<br>');
+    // 0 <= Math.floor(Math.random() * 10) < 10
+    document.write(Math.floor(randomNum * 10), '<br>');
+    // 1 <= Math.floor(Math.random() * 10) + 1 < 11
+    document.write(Math.floor(randomNum * 10) + 1, '<br>');
+
+    // 공식화
+    // Math.floor(Math.random() * (최대값 - 최소값 + 1)) + 최소값;
+    document.write('<h4>최소값과 최대값 사이의 정수를 반환하는 함수</h4>')
+    function getRandomIntger(max, min) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    document.write(getRandomIntger(10, 60), '<br>');
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* body(상속) -> * 0점 -> 태그(1점) -> 클래스(10점) 
+      -> id(100점) -> 인라인(1000점) -> !important(최고점!) */
+      #pikachu{
+      width: 400px;
+      background-color: black;
+      color: yellow; 
+      text-align: center;
+      }
+    .pikachu{
+      width: 300px;
+      background-color: black;
+      color: yellow !important;
+      text-align: center;
+    }
+    div{
+      color: blue;
+      font-size: 50px;
+    }
+    *{
+      color: aqua;
+    }
+    
+    body{
+      color: violet;
+      font-size: 30px;
+    }
+    
+  </style>
+</head>
+<body>
+  <div style="color: yellowgreen;" id="pikachu" 
+       class="pikachu">
+    pikapika
+ </div>
+
+</body>
+</html>

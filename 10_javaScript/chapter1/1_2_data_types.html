@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 자료형 (Data Types)
+    // 1.기본 자료형
+    // String, Number,Boolean, undifined, null, symbol(ES 6차)
+    // 1)String
+    const name1 = "Mong Soon";
+    const name2 = 'Kim Zoolza'
+    document.write(name1, '<br>');
+    document.write(name2, '<br>');
+
+    const single = "He is called 'Mong Soon'";
+    const double = 'He is called "Mong Soon"';
+    document.write(single, '<br>');
+    document.write(double, '<br>');
+
+    // 이스케이프문자:    \'    \"    \\
+    const single2 = 'He is called \'johhny\'';
+    const double2 = "he is called\"MongSoon\"";
+
+    // 백틱
+    const name = 'kimYounSik';
+    document.write(`hello ${name}`, '<br>');
+    document.write(`hello ${'name'}`, '<br>');
+    document.write('hello ' + name, '<br>');
+    document.write(`hello ${1 + 2}`, '<br>');
+    document.write('<br>');
+
+    // 2)Number    64bit 소수점으로 저장
+    const num1 = 34.13;
+    const num2 = 34;
+    document.write(num1, '<br>')
+    document.write(num2, '<br>')
+    document.write('<br>');
+
+    // 3)Boolean
+    const numX = 5;
+    const numY = 5;
+    const numZ = 6;
+    document.write(numX === numY, '<br>');
+    document.write(numX === numZ, '<br>');
+    const isOk = true;
+    document.write(isOk, '<br>');
+    document.write('<br>');
+
+    // (중요) false 취급(falsy) !!!
+    // false, null,  undefined, 0, '(빈문자)', Nan  !!!
+
+    // 값이 비어있음을  의미하는 자료형 2가지 
+    // null | undifined
+    // 특징 : 데이터 타입이자 데이터 값 (타입인 동시에 값)
+    // 4) undefined: 값이 할당되지 않았을 때
+    let val1;
+    let val2 = 'hello';
+    document.write(val1, '<br>');
+    document.write(val2, '<br>');
+
+    // 5) null : 의도적으로 비우고자 할 때
+    // 예: 선언된 변수에 아직 어떤 값을 할당할지, 어떤 데이터 타입이 할당될지 모를 경우
+    //    개발자가 명시적으로 사용
+    val2 = null;
+    document.write(val2, '<br>');
+    document.write('<br>');
+
+
+    // 2.객체
+    // Object, Array
+    // 1) Object
+    // 키 값 쌍으로 관련있는 여러데이터를 저장 {}
+    const person = {
+      firstName: 'Zoolza',
+      lastName: 'Kim',
+      age: 30,
+      eyeColor: '#0000ff',
+      isMarried: false
+    };
+    // document.write(person);
+    console.log(person);
+
+    // 2)배열
+    const cars = ['Benz', 'BMW', 'Audi'];
+    console.log(cars);
+
+    // index사용으로 객체서 꺼내오기
+    console.log(cars[0]);
+    // 데이터변경
+    cars[0] = 'Hyundai';
+    cars[1] = 'Kia';
+
+    console.log(cars);
+
+    // 3.typeof 변수의 자료형(data type 알아낼 수 있음)
+    console.log(typeof 'Goni');
+
+
+  </script>
+</body>
+
+</html>

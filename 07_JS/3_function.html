@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>테스트</div>
+  <script>
+    function printNumber(){
+      console.log(123);
+    }
+
+    printNumber();
+    printNumber();
+    printNumber();
+
+    function renturnFunc() {
+      return 12345;
+    }
+    console.log(renturnFunc());
+
+    const a = renturnFunc();
+    console.log(a);
+
+
+    function sum(num1,num2,num3) {
+      return num1 + num2 * num3;
+    }
+
+    console.log(sum(1,2,3));
+
+    const result1 = sum(3,4,5);
+    const result2 = sum(6,6,7);
+    let result3 = sum(3,2,1);
+    
+    console.log(result1,result2,result3);
+
+    function hello() {
+      console.log('hello~');
+    }
+    hello();
+    
+    // 기명함수
+    const world = function ()  {
+      console.log('world~');
+    };
+    world();
+
+    function handler() {
+      console.log('cliked!');
+    }
+
+    document.body.addEventListener('click', handler);
+    handler();
+    handler();
+
+    // 익명함수 활용
+    document.body.addEventListener('click', function () { 
+      console.log('익명함수!!');
+    });
+
+    // 메소드
+    const user = {
+      name: 'mongsoon',
+      age: 20,
+      getName: function () {
+        return this.name;        
+      }
+    }
+    const hisName = user.getName();
+    console.log(hisName);
+
+    console.log(user.getName);    //변수할당없이
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    
+    // JS코드
+    // 대소문자구분 ;세미콜론습관화
+    let a = 1; const b = 2;
+    // 한줄에 하나만!!
+    // []{}()
+    document.write('<h1>환영합니다</h1>');
+    document.write('write: 문서출력메소드','<br>');
+
+    // 변수: 데이터담는 그릇 값은 한개만 나중에 쓰기위해 저장
+    // val const let 
+    // val ES6 이후 XX
+    // const 변경불가, let 변수 변경가능
+
+    // 낙타표기법 카멜케이스
+    // 의미있는 이름 사용하여 변수선언
+
+    // 변수명규칙
+    // 문자 | 숫자 |  _ |  $ 만 사용가능
+    // 숫자시작 X
+    // 예약어불가
+    // 대소문자 구분
+
+    // let
+    let x = 7;
+    let y = 8;
+    let z = x + y;
+
+    x = 9; 
+    document.write(z, '<br>');
+    // let x =20;  재선언불가
+
+    // const
+    const X = 10;
+    const Y = 11;
+    const Z = X + Y;
+
+    // X = 20;
+    // 값 재할당시 에러
+    // cosnt X = '55' 동일변수명 에러
+
+    // 실무 예
+
+    const DATE_FORMAT = 'yyyy.mm.dd';
+    const DATE_FORMAT2 = 'yyyy_mm_dd';
+
+    const COLOR_RED = '#ff0000';
+    const COLOR_BLUE = '#0000ff';
+    const COLOR_BLACK= '#000000';
+
+    // (참고) 코드가 실행되기 전에 이미 그 값을 알고 있는 상수 (하드 코딩된 상수 값)
+    // =>대문자 + 스네이크 케이스 사용
+
+    // 우리는 기본적으로 const를 우선으로 사용하고, 값의 재할당이 필요한 경우에만 let을 사용!
+    
+
+    </script>
+</body>
+</html>

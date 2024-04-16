@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .seoul{
+      color: blue;
+    }
+    .parent{
+      width: 100px;
+      height: 100px;
+      background-color: green;
+    }
+
+    .child{
+      width:300px;
+      /* height: 300px; */
+      height: inherit;
+      background-color: inherit;
+      /* background-color: orange; */
+      /* background-color: inherit; */
+      
+      /* 뷰포트기준배치 */
+      position: fixed;
+      top: 100px;
+      right: 10px;
+    }
+
+  </style>
+</head>
+<body>
+<div class="korea">대한민국
+  <div class="seoul">서울특별시
+    <div class="bang">방배동</div>
+    <div class="sadang">사당동</div>
+    <div class="banpo">반포동</div>
+  </div>
+  <div class="incheon">인천광역시
+    <div class="juan">주안동</div>
+    <div class="guwol">구월동</div>
+  </div>
+
+  <br><br>
+
+  <div class="parent">
+    <div class="child"></div>
+  </div>
+
+</div>
+</body>
+</html>

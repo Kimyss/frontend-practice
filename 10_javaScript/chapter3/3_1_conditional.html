@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 조건문
+
+    let age = 17;  //값을 바꾸기 위해 let
+    let isAdult = false;
+
+    if (age > 18) {
+      // age가 18보다 크면
+      isAdult = true;
+    }
+
+    // Quiz
+
+    // const walk = prompt('하루 걷는 양은 몇 보인가요?', '0');
+    // if (walk >= 10000) {
+    //   document.write('좋은 습관입니다!', '<br>');
+    // }
+
+    // 2) if-else문
+    // 조건식을 만족하면 if문 실행, 만족하지 않으면 else문 실행
+    // 조건식의 결과에 따라 두가지 중 하나를 실행시킬때 사용
+
+    // age = 19;
+    // if (age > 18) {
+    //   // age가 18보다 크면
+    //   isAdult = true;
+    // }else{
+    //   isAdult = false;
+    // }
+
+    // windows.confirm('메세지'): 확인 상자는 사용자가 무언가를 확인하거나 수락하기를 원하는 경우에 사용
+    // 확인 누르면 true를 취소를 누르면 false를 반환
+    // const result =  confirm('정말로 회원 탈퇴를 하시겠습니까?');
+    // if (result) {
+    //   document.write('탈퇴 처리되었습니다');
+    // } else {
+    //   document.write('탈퇴 취소되었습니다');
+    // }
+
+    //Quiz
+    //  const num = prompt('숫자입력', '0');
+
+    //  if (num % 2 ===0) {
+    //     document.write('짝수');
+    //  } else{
+    //     document.write('홀수');
+    //  }
+
+    // if (num % 2) {
+    //   document.write('짝수');
+    // } else {
+    //   document.write('홀수');
+    // }   ?????????????????????????
+
+    // 3) if -else if 문
+    // 여러 if문 조건식 중 만족하는 것을 찾아 실행, 만족하는게 없으면 else문 실행
+    // 조건식의 결과에 따라 여러가지중 하나를 실행시킬때 사용
+
+    // const hour = 11;
+
+    // if (hour < 10) {
+    //   document.write('Good morning', '<br>');
+    // }else if(hour < 18){
+    //   document.write('Good afternoon', '<br>');
+    // } else if(hour < 21){
+    //   document.write('Good evening', '<br>');
+    // } else{
+    //   document.write('Good night', '<br>');
+    // }
+
+    // const month = prompt('현재는 몇 월입니까?');
+    // if (month >= 3 && month <= 5 ) { //  3 ~ 5
+    //   document.write('햇살 가득한 봄이네요 !');
+    // } else if (month >= 6 && month <= 8) {
+    //   document.write('여행 가기 좋은 여름이네요!');
+    // } else if (month >= 9 && month <= 11) {
+    //   document.write('독서의 계절 가을이네요!');
+    // } else {  //나머지 입력
+    //   document.write('눈이오는 겨울이네요 !')
+    // }
+
+    // Quiz : 명확히 하려면 else if 문을 사용하여 12,1~2 체크하는 조건식 넣기
+
+    // 조건식에 다른데이터 입력시
+    if (3) {
+      document.write('true취급', '<br>');
+    }
+
+    if (0) {
+      document.write('true로 취급', '<br>');
+    } else {
+      document.write('false로 취급', '<br>');
+    }
+
+    // 4)중첩 if문
+
+    // const id = 'bbq5883';
+    // const pw = '5883';
+    // const userId =  prompt('아이디는?');
+
+    // if (id ===userId) {
+    //   const userPw = prompt('비밀번호?');
+    //   if (pw === userPw) {
+    //     alert(userId + "방가방가");  
+    //   }else{
+    //     alert('비번틀림');
+    //   }
+    // } else {
+    //   alert('아이디다름');
+    // }
+
+    // 2. switch문
+
+    // 1)switch문
+
+    // const site = prompt('네이버, 다음, 구글 중 자주가는 사이트?', '입력하세요');
+    // switch (site) {
+    //   case '네이버' :
+    //   case 'naver':
+    //     url = 'www.naver.com';
+    //     break;
+    //   case '다음':
+    //   case 'daum':
+    //     url = 'www.daum.net';
+    //     break;
+    //   case '구글':
+    //   case 'google':
+    //     url = 'www.google.com';
+    //     break;
+    //   default: 
+    //     document.write('잘못 된 접근입니다');
+    //     break;
+    // }
+    // if(url)
+    // location.href = 'http://' + url;
+
+    // 2)break 없을떄
+    const time = 10;
+    document.write('현재시간 ' + time + '시', '<br>');
+
+    switch (time) {
+      case 8:
+        document.write('출근시간', '<br>');
+
+      case 9:
+        document.write('회의시간', '<br>');
+
+      case 10:
+        document.write('회의시간', '<br>');
+
+      default:
+        document.write('외근중', '<br>');
+    }
+
+    // 3)여러개 case묶기
+
+    const grade = 'a';
+
+    switch (grade) {
+      case 'A':
+      case 'a':
+        document.write('우수 회원입니다.', '<br>');
+        break;
+      case 'B':
+      case 'b':
+        document.write('일반 회원입니다.', '<br>');
+        break;
+      default:
+        document.write('손님', '<br>');
+        break;
+    }
+
+
+  </script>
+</body>
+
+</html>

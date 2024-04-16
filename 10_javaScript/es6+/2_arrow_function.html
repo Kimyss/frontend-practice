@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 화살표 함수
+
+    // ES5에서 -
+    var ham = function (name) {
+      return 'hello' + name;
+    }
+
+    const ham2 = (name) => {
+      return 'hello' + name;
+    }
+
+    //매개변수 하나
+    const ham3 = name => {
+      return 'hello' + name;
+    }
+    //매개변수 X
+    const ham4 = () => {
+      return 'hello' + name;
+    }
+
+    // 암시적반환 리턴문 하나만 있을경우
+    const ham5 = name => 'hello ' + name;
+    console.log(ham5('kim'));
+
+    function getFavoriteMovie() {
+      return {
+        title: 'Inception',
+        year: '2010',
+        direction: 'Nolan',
+        rating: 9.6
+      };
+    }
+    console.log(getFavoriteMovie);
+
+    const getFavoriteMovie2 = () => {
+      return {
+        title: 'Inception',
+        year: '2010',
+        direction: 'Nolan',
+        rating: 9.6
+      }
+    }
+    console.log(getFavoriteMovie2);
+
+
+    const getFavoriteMovie3 = () =>
+    ({
+      title: 'Inception',
+      year: '2010',
+      direction: 'Nolan',
+      rating: 9.6
+    });
+    console.log(getFavoriteMovie3);
+
+    // Quiz: 화살표 함수로 변경하기
+    // Quiz1
+    function add(num1, num2) {
+      return num1 + num2;
+    }
+
+    //풀이
+
+    // Quiz2
+    function ask(question, yes, no) {
+      if (confirm(question)) yes();
+      else no();
+    }
+
+    ask(
+      '동의하십니까?',
+      function () { alert('동의하셨습니다.'); },
+      function () { alert('취소 버튼을 누르셨습니다.'); }
+    );
+
+
+    // 풀이2
+
+
+
+  </script>
+</body>
+
+</html>

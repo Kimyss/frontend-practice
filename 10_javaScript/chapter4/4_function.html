@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- * -->
+  <button type="button" onclick="changeColor()">배경색 바꾸기</button>
+
+  <!-- ** -->
+  <input type="text" class="id">
+  <input type="password" class="pw">
+  <button type="button" class="btn-login">로그인</button>
+
+  <div>
+    <p>
+      <button type="button" onclick="gallery('PREV')">이전</button>
+      <button type="button" onclick="gallery('NEXT')">다음</button>
+    </p>
+    <p>
+      <img src="images/pic_1.jpg" alt="photo" class="photo">
+    </p>
+  </div>
+
+
+  <script>
+    // 함수
+    // 1) 함수 선언문 : 기명함수로 정의
+    // function 함수명(파라미터) {
+    //   실행코드;
+    // }
+
+    // 2) 함수 표현식 :익명함수를 변수에 할당
+    // 변수 = function() {    
+    //   실행코드;
+    // };
+
+    // 함수선언문(기명함수)과 함수표현식(변수할당)
+    // 함수선언문 이름있는 기명함수는  **호이스팅**
+
+
+
+    // 버튼클릭 시 배경색 바뀌는 함수
+    // body *참조
+
+    const colors = ['yellow', 'aqua', 'purple', 'white'];
+    
+
+    // 3)매개변수가 있는 함수
+    // function 함수명(매개변수1, 매개변수2, ...) {
+    //   실행코드;
+    // }
+    
+    function introduce(name, area) {
+      document.write('안녕하세요 ' + name + '입니다. <br>');
+      document.write(`사는곳은 ${area} 입니다. <br>`);
+    }
+
+    introduce('배트맨', '주안동');
+    introduce('조커', '고담시');
+
+    // Quiz : login 함수 선언하고 호출하기
+    // 잘못된 id입력: alret('존재하지 않는 아이디 입니다')
+    // 잘못된 pw입력: alret('잘못된 비밀번호입니다')
+    // 로그인 성공시: alret(' 님 방문을 환영합니다!')
+    // 중첩 if문
+
+    const dbUser = {
+      id: 'joker',
+      pw: '1234',
+      name: '김조커'
+    };
+    
+    // 각 로그인 정보 접근 하고 로그인했을시 아이디맞는지 비번틀린지 기능 만들고
+    // 로그인버튼 클릭했을시 발생하는 기능
+    // 위 ** 참조
+    
+    
+    // 4) 함수에서 return문의 역할
+    // 데이터 (결과값)를 반환
+    // 함수를 강제 종료
+    // function 함수명() {
+    //   실행코드;
+    //   return 값;
+    //   실행코드2;
+    //   return 값2; => 실행x
+    // }
+
+    // 여러 과목의 점수를 입력받아 평균점수 구하기
+
+
+    // Quiz 이전 / 다음버튼 이미지 넘기기
+    // (body태그 참조 ***)
+    
+    // 버튼을 누르면 기능실행 
+    // 사진이동: 사진이동은 파일명 1부터 변경되도록 셋어트리뷰트로 기능수행
+
+    // 사진 클래스 쿼리셀럭터 로 콘스트변수 만들고
+    // 변수.셋어트리뷰트로 이미지변경 이미지네임의 숫자변경
+    // 그리고 버튼에 앞 뒤 기능을 만들어야 하기떄문에 그 기능을 가진 함수를 만들도록한다
+  
+    
+    
+
+  //   <div>
+  //   <p>
+  //     <button type="button" onclick="gallery()">이전</button>
+  //     <button type="button" onclick="gallery()">다음</button>
+  //   </p>
+  //   <p>
+  //     <img src="images/pic_1.jpg" alt="photo" class="photo">
+  //   </p>
+  // </div>
+</script>
+</body>
+</html>

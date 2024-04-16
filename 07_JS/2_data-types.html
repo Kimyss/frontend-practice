@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const myName = "Moon";
+    const emali ='moond1944@naver.com';
+    const hello =`hello ${myName}?!`;
+    const concat = `Hello ` + myName + '?!';
+
+    console.log(myName);
+    console.log(emali);
+    console.log(hello);
+    console.log(concat);
+
+    const number = 1168;
+    const opacity = 0.77;
+    
+    console.log(number);
+    console.log(opacity);
+
+   
+    const checked = true;
+    
+    const isshow = false;
+
+    console.log(checked);
+    console.log(isshow);
+
+    let undef;
+    console.log(undef);
+    
+    const obj = { abc: 123 };
+    console.log(obj.abc);
+    console.log(obj.xyz);
+
+   
+    let name = null;
+    console.log(name);
+
+    name = 'JHKIM'
+    console.log(name);
+
+    const user = { 
+      
+      name: 'goni',       //문자데이터
+      age:99,             //숫자데이터
+      isMarried:false,    //논리 데이터
+    };
+   
+    console.log(user.name);
+    console.log(user.age);
+    console.log(user.isMarried);
+
+    console.log(user);
+
+
+    const fruits = ['Apple', 'Banana','Cheery'];
+    console.log(fruits);
+
+    console.log(fruits[0]);
+    console.log(fruits[1]);
+    console.log(fruits[2]);
+
+    //다른종류의 데이터 타입 포함 시킬 수 있지만 같은 종류의 데이터를 나열
+    const arr =['goni', 99, false];
+
+    console.log(arr[0]);
+    console.log(arr[1]);
+    console.log(arr[2]);
+
+     // (활용 예) 상품리스트나 사용자리스트
+     const productlist = [
+      {
+        productId:1,
+        productName:'고려은단 비타민',
+        price:329000,
+        productiImg:'http://이미지경로',
+        brand: '고려은단'
+      },
+      {
+        productId:2,
+        productName:'콘드로이친1200',
+        price:285000,
+        productiImg:'http://이미지경로',
+        brand: '관절엔'
+      },
+      {
+        productId:3,
+        productName:'에버콜라겐C',
+        price:210000,
+        productiImg:'http://이미지경로',
+        brand: '뉴트리'
+      }
+    ];
+    console.log(productlist[0].productiImg);
+
+    const userlist = [
+      {
+        userId:'geoblo',
+        name:'김재현',
+        age: 99,
+        email:'geoblo@naver.com',
+        hobby:['배드민턴','싸이클', '스노우보드']
+      },
+      {
+        userId:'javakim',
+        name: '김자바',
+        age: 20,
+        email:'jsjs@gmail.com',
+        hobby:['멍때리기']
+      }
+    ];
+
+    let e = 1;
+    console.log(typeof e);
+
+    e = 'abc';
+    console.log(typeof e);
+  </script>
+</body>
+</html>

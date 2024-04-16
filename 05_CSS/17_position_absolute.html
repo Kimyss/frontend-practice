@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+      .grandparent{
+      width: 700px;
+      height: 550px;
+      background-color: plum;
+    }
+    .parent{
+      width: 600px;
+      height: 350px;
+      background-color: royalblue;
+      /* position: relative; */
+    }
+
+    .child-1{
+      width: 250px;
+      height: 150px;
+      background-color: orange;
+    }
+    .child-2{
+      width: 350px;
+      height: 250px;
+      background-color: coral;
+      position: absolute;
+      top: 10px;
+      right: 70px;
+    } 
+
+    .wrapper{
+        width: 800px;
+        height: 400px;
+        background-color: royalblue;
+         /* position: relative;  */
+    }
+
+    .box{
+        width: 100px;
+        height: 100px;
+        background-color: lightgreen;
+        /* position: absolute; */
+        /* top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;  */
+        margin: 20px 60px; 
+    }
+    /* margin 기준 이해 잘 안됨 auto /0 auto */
+  </style>
+</head>
+<body>
+  <div class="grandparent">
+    <div class="parent">
+      <div class="child-1">1자식</div>
+      <div class="child-2">2자식 앱솔루트 부모기준 부모릴리 없으면 뷰포트기준</div>
+    </div>
+  </div>
+
+  <br><br>
+
+  <div class="wrapper">부모한테컨텐츠가있을때부모한테컨텐츠가있을때
+    <div class="box">box상자</div>
+  </div>
+  
+</body>
+</html>

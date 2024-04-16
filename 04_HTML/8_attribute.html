@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* .red{
+      color: red;
+    } */
+    #abc{
+      color: gray;
+    }
+  </style>
+  <title>Document</title>
+</head>
+<body>
+    <!-- 태그마다 사용 가능한 속성이 정해져있음 -->
+    <img src="http://via.placeholder.com/150" alt="샘플">
+    <!-- img태그에 href속성은 동작 안함 link나 a태그에서 사용 -->
+    <img href="http://via.placeholder.com/150" alt="샘플">
+
+    <br><br>
+    <a href="http://www.naver.com" target="_blank" title="네이버(새창)">NAVER</a>
+
+    <br>
+    <span style="color: blue;">파랑글씨</span>
+
+    <br><br>
+
+    <span>동해물</span>과 <span class="red">백두산이</span> 마르고 닳도록
+    하느님이 보우하사 <span class="red">우리나라</span> 만세
+
+    <br><br>
+
+    <span id="abc">동해물</span>과 <span class="red">백두산이</span> 마르고 닳도록
+    하느님이 보우하사 <span class="red">우리나라</span> 만세
+    
+    <br><br>
+    <div data-fruit-name="apple">사과</div>
+    <div data-game-name="PUBG">배틀그라운드</div>
+    <div data-fruit-name="banana">바나나</div>
+    <script>
+      //div 태그를 모두 찾아서 elements라는 이름의 그릇(저장공간)에 담아라
+      const elements = document.querySelectorAll('div');
+      console.log(elements)
+      //apple, PUBG
+      //찾은 요소들을 하나씩 반복해가면서 element에 다시 담고
+      elements.forEach(element => {
+        //element안에 dataset안에 fruitName으로 접근
+        // console.log(element.dataset.fruit-name); fruit-name :- 안됨
+        //<div data-fruit-name="banana">바나나</div>
+        console.log("시작.......................")
+        console.log(element)  //<div data-fruit-name="banana">바나나</div>
+        console.log(element.dataset)
+        console.log("............")
+        console.log("!!!!!!!!!!!!!!!" + element.dataset.fruitName);  //banana
+        console.log(element.dataset.gameName);  //undefined
+        console.log(element.dataset.gameName);  //undefined
+        console.log("끝..................")
+      });
+     </script>
+
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 연산자
+    
+    // 1. 할당연산자 대입연산자
+    document.write('<h2>할당(대입) 연산자</h2>');
+    let num1 = 30;
+    let num2 = 50;
+    
+    // 복합할당연산자 복합대입연산자
+    num1+=num2;   //num1 = 
+    document.write(num1, '<br>');
+
+    num1 -= num2; 
+    document.write(num1, '<br>');
+
+    num1 *= num2;   
+    document.write(num1, '<br>');
+
+    num1 /= num2;   
+    document.write(num1, '<br>');
+
+    // 2. 산술 연산자
+    // +, -, *, /, % (나머지 연산자)
+    document.write('<h2>산술 연산자</h2>');
+    num1 = 15;
+    num2 = 2;
+    let result;
+    result = num1 + num2;
+    document.write(result, '<br>');
+
+    result = num1 - num2;
+    document.write(result, '<br>');
+
+    result = num1 * num2;
+    document.write(result, '<br>');
+
+    result = num1 / num2;
+    document.write(result, '<br>');
+
+    result = num1 % num2;
+    document.write(result, '<br>');
+
+    document.write('<h2>증감 연산자</h2>');
+    
+    num1 = 10;
+
+    num1--;
+    document.write(num1, '<br>')
+
+    num1++;
+    document.write(num1, '<br>');
+
+    // 전위, 후위 연산자
+    num2 = 20;
+    result = num2++;  
+    document.write(result,' ',num2, '<br>');
+
+    result = ++num2;
+    document.write(result,' ',num2, '<br>');
+
+    // Quiz
+    num1 = 10;
+    num2 = 20;
+    result = ++num1 + num2--;
+    // 순서대로 ㄱㄱ
+
+    // 4.문자열 연산자
+    document.write('<h2>문자열 연산자</h2>');
+
+    document.write('<h2>문자열 연산자</h2>');
+    const t1 = '학교종이';
+    const t2 = '땡땡땡';
+    const t3 = 8282;  
+    const t4 = '어서 모이자';
+
+    // (중요) 연산의 기본 방향 : 왼쪽 -> 오른쪽으로
+    result = t1 + t2 + t3 + t4;
+    document.write(result, '<br>');
+
+    result = t1 + 100 + 200 + t4;
+    document.write(result, '<br>');
+
+    result = 100 + 200 + t1 + t4;
+    document.write(result, '<br>');
+
+    result = t1 + (100 + 200) + t4;
+    document.write(result, '<br>');
+
+    //5.비교 연산자
+    document.write('<h2>비교 연산자</h2>');
+   
+    result = 10 > 20;
+    document.write(result, '<br>');
+
+    result = 10 < 20;
+    document.write(result, '<br>');
+
+    result = 10 <= 20;
+    document.write(result, '<br>');
+
+    result = 20 == '20';    //== 말 그대로 값만 비교
+    document.write(result, '<br>');
+
+    result = 20 ==='20';    //=== 값과 타입까지 비교(권장)    엄격한 비교, 일치비교
+    document.write(result, '<br>');
+
+    result = 10 != '20';
+    document.write(result, '<br>');
+
+    result = 20 != '20';    //값만 비교
+    document.write(result, '<br>');
+
+    result = 20 !== '20';   //값과 타입까지 비교
+    document.write(result, '<br>');
+
+    
+    // 6. 논리 연산자
+    // Boolean값에 관한 논리비교를 통한 Boolean값 반환
+    document.write('<h2>비교 연산자</h2>');
+
+    result = 10 > 20 || 20 >= 30 || 30 > 40;
+    document.write(result, '<br>');
+
+    result = 10 > 20 || 20 >= 30 || 30 <= 40;  // f || f || t = true;
+    document.write(result, '<br>');
+
+    result = 10 <= 20 && 20 >= 30 && 30 <= 40; // t && f && t = false;
+    document.write(result, '<br>');
+
+    result = 10 <= 20 && 20 <= 30 && 30 <= 40; // t && t && t = true;
+    document.write(result, '<br>');
+
+    result = !(10 > 20);   //false
+    document.write(result, '<br>');
+
+    // (응용) 사이 범위 확인하기
+    // age(나이)가 14세 이상 90세 이하에 속하는지를 확인하는 if문 작성
+    // "이상과 이하"는 범위에 14나 90이 포함된다는 의미
+    // if (age >= 14 && age <= 90) {};
+    // if (14 <= age && age <= 90) {};
+    // age(나이)가 14세미만 90세 초과하는지 확인하는 if문 작성
+    // if(age > 14 || age > 90){};
+    // if(!(age>=14 && age <= 90)) {};
+
+    // && 앞의 값이 truthly면 뒤로 넘어감
+    // || 앞의 값이 falsy면 뒤로 넘어감
+    
+    // (응용) 기본값 설정시 사용
+    const dbData = null;
+    result = dbData;
+    
+    // if (dbData === null) {
+    //   result = '기본값'
+    // }
+
+    result = dbData || '기본값'
+    document.write(result, '<br>');
+
+    // (심화 Quiz)
+    let aa;
+    let bb = null;
+    let cc = undefined;
+    let dd = 4;
+    let ee = 'five';
+    let ff = aa || bb || cc || dd || ee;
+    // ff 에 저장된값은?
+    // document.write(ff, '<br>');
+
+
+    // 7. 삼항연산자 
+    // 조건식 ? 값1 : 값2     t : f
+    document.write('<h2>삼항 연산자 (조건 연산자)</h2>');
+
+    result = false ? 'javarscript' : 'hello';
+    document.write(result, '<br>');
+
+    // 간단조건문은 삼항연산자
+    const score = 83;
+    result = score >= 90 ? 'A' : (score >= 80 ? 'B' : 'C');
+    document.write(result, '<br>');
+
+    // 홀짝판별기
+    const number =  prompt('숫자를 입력하세요', '0');
+    result =  number % 2 === 0 ? '짝수' : '홀수'; 
+    document.write(result, typeof number, '<br>');  
+    // (prompt 주의 문자열취급 주의 특히 + 주의)
+
+
+  </script>
+</body>
+</html>

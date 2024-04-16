@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    // http://127.0.0.1:5501/10_javaScript/chapter3/quiz/3_2_loop/3_2_quiz8Star.html
+    for(let i = 1; i <= 5; i++){
+      for(let j = 1; j <= 5; j++){
+        document.write(i);
+      }
+      document.write('<br>');
+    }
+
+    document.write('<br>');
+    document.write('<br>');
+
+
+
+    document.write('<br>');
+    document.write('<br>');
+
+    // 12345  i = 0   j = 1 2 3 4 5  j
+    // 23456  i = 1   j = 2 3 4 5 6  j+1
+    // 34567  i = 2   j = 3 4 5 6 7  j+2
+    // 45678
+    // 56789
+
+
+    document.write('<br>');
+    document.write('<br>');
+
+    // 56789   i = 1; 5.6.7.8.9 => 5 6 7 8 9 (i-1)
+    // 45678   i = 2; 5.6.7.8.9 => 4 5 6 7 8 -
+    // 34567   i = 3; 5.6.7.8.9 => 3 4 5 6 7
+    // 23456   i = 4;  
+    // 12345   i = 5; 
+ 
+
+    document.write('<br>');
+    document.write('<br>');
+
+    // *      i=1  j =1
+    // **     i=2  j =2
+    // ***    i=3  j =3
+    // ****   i=4  j =4
+    // *****
+
+
+
+    document.write('<br>');
+    document.write('<br>');
+
+    // *****  i = 1  j = 12345 5  i 1일때 j 다섯
+    // ****   i = 2  j = 1234  4  i 2일때 j 넷
+    // ***    i = 3  j = 123   3
+    // **     i = 4  j = 12    2
+    // *
+
+  
+
+    // ***** 1 5    i = 1일때 _ 0개  * 5개
+    //  **** 2 4    i = 2일때 _ 1개  * 4개 
+    //   *** 3 3    i = 3일때 _ 2개  * 3개
+    //    ** 4 2    i = 4일때 _ 3개  * 2개
+    //     *        i = 5일때 _ 4개  * 1개
+    //              i = i일때 _(i-1)개 * (6-i)개
+
+    document.write('<br>');
+    document.write('<br>');
+
+  
+    document.write('<br>');
+  
+
+  document.write('<br>');
+  document.write('<br>');
+
+    //     *  1  1
+    //    **  2  2
+    //   ***
+    //  ****
+    // *****
+    for(let i = 1; i <= 5; i++){
+      for(let j =5; j > i; j--){
+        document.write('_');
+      }
+      for(let j = 1; j <= i; j++){
+        document.write('*');
+      }
+
+      document.write('<br>');
+    }
+    
+
+
+
+
+
+  </script>
+</body>
+</html>
