@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // ?. 옵셔널 체이닝 연산자 (ES2020)
+    // 예제1 : 사용자를 나타내는 간단한 객체
+
+    const user1 = {
+      name: 'Goni',
+      age: 30,
+      work: {
+        title: 'IT teacher',
+        location: 'korea'
+      }
+    };
+
+    const user2 = {
+      name: 'Zoolza',
+      age: 28,
+    };
+
+    let jobTitle;
+    jobTitle = user1.work.title;
+    // jobTitle = user2.work.title;  //없는 속성
+
+    if (user2.work) {
+      jobTitle = user2.work.title;
+    };
+
+    console.log(jobTitle);
+
+    jobTitle = user2.work && user2.work.title;
+    console.log(jobTitle);
+
+    // 옵셔널 체이닝 연산자 사용시 간결
+
+    jobTitle = user1.work?.title;
+    console.log(jobTitle);
+
+    jobTitle = user2.work?.title;
+    console.log(jobTitle);
+
+
+  </script>
+</body>
+
+</html>
