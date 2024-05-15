@@ -9,6 +9,13 @@ import Clock from './chapter4/Clock';
 import PropUse from './chapter5/5.3/PropUse';
 import CommnetEx from './chapter5/5.6/CommnetEx';
 import CommentList from './chapter5/CommentList';
+import Counter from './chapter7/7.2/Counter';
+import TextInputWithFocusButton from './chapter7/7.6/TextInputWithFocusButton';
+import Toggle from './chapter8/8.1/Toggle';
+import ConfirmButton from './chapter8/ConfirmButton';
+import MyButton from './chapter8/8.2/MyButton';
+import Greeting from './chapter9/9.1/Greeting';
+import LoginControl from './chapter9/9.2/LoginControl';
 
 
 
@@ -38,8 +45,22 @@ root.render(
   //   }}
   //  />
 
-  <CommentList />
+  // <CommentList />
 
+  // 7장
+  // <Counter />
+  // <TextInputWithFocusButton />
+
+  // 8장
+  // <Toggle />
+  // <MyButton />
+  // <ConfirmButt1on />
+
+  // 9장
+  // <Greeting isLoggedIn = {true} />
+  // <Greeting />
+
+  <LoginControl />
 );
 
 // If you want to start measuring performance in your app, pass a function
