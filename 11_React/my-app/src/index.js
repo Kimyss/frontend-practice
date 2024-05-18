@@ -16,6 +16,18 @@ import ConfirmButton from './chapter8/ConfirmButton';
 import MyButton from './chapter8/8.2/MyButton';
 import Greeting from './chapter9/9.1/Greeting';
 import LoginControl from './chapter9/9.2/LoginControl';
+import LoginControlRefactoring from './chapter9/9.3/LoginControlRefactoring';
+import MailBox from './chapter9/9.3/MailBox';
+import Toolbar from './chapter9/Toolbar';
+import LandingPage from './chapter9/LandingPage';
+import MainPage from './chapter9/9.4/MainPage';
+import NumberList from './chapter10/10.1/NumberList';
+import ListKey from './chapter10/10.2/ListKey';
+import AttendaceBook from './chapter10/AttendaceBook';
+import NameForm from './chapter11/11.2/NameForm';
+import EssayForm from './chapter11/11.3/EssayForm';
+import FileInput from './chapter11/11.3/FileInput';
+import FlavorForm from './chapter11/11.3/FlavorForm';
 
 
 
@@ -60,7 +72,24 @@ root.render(
   // <Greeting isLoggedIn = {true} />
   // <Greeting />
 
-  <LoginControl />
+  // <LoginControl />
+  // <LoginControlRefactoring />
+  // <MailBox unreadMessage = {['react', 'Re: React', 'Re:Re: React']} />
+  // <MailBox unreadMessage = {[]} />
+
+  // <MainPage />
+  // <LandingPage />
+
+  // 10장
+  // <NumberList />
+  // <ListKey />
+  // <AttendaceBook />
+
+  // 11장
+  // <NameForm />
+  // <EssayForm />
+  // <FileInput />
+  <FlavorForm />
 );
 
 // If you want to start measuring performance in your app, pass a function

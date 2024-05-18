@@ -2,15 +2,14 @@ import { useState } from "react";
 import Greeting from "../9.1/Greeting";
 
 function LoginButton(props) {
-  return <button type="button" onClick={props.onClick}>로그인버튼</button>
+  return <button type="button" onClick={props.onClick}> 로그인 버튼(false)</button>
 };
 
 function LogOutButton(props) {
-  return <button type="button" onClick={props.onClick}>로그아웃버튼</button>
+  return <button type="button" onClick={props.onClick}> 로그아웃 버튼(true)</button>
 };
 
-function LoginControl() {
-
+function LoginControlRefactoring() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleLogin = () => {
@@ -20,20 +19,15 @@ function LoginControl() {
   const handleLogout = () => {
     setIsLoggedIn(false);
   };
-
-  let button;
-  if (isLoggedIn) {
-    button = <LoginButton onClick={handleLogout} />
-  } else {
-    button = <LogOutButton onClick={handleLogin} />
-  }
-
   return (
     <>
       <Greeting isLoggedIn={isLoggedIn} />
-      {button}
+      {isLoggedIn
+        ? <LogOutButton onClick={handleLogout} />
+        : <LoginButton onClick={handleLogin} />
+      }
     </>
   );
 };
 
-export default LoginControl;
+export default LoginControlRefactoring;
