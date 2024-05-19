@@ -28,6 +28,9 @@ import NameForm from './chapter11/11.2/NameForm';
 import EssayForm from './chapter11/11.3/EssayForm';
 import FileInput from './chapter11/11.3/FileInput';
 import FlavorForm from './chapter11/11.3/FlavorForm';
+import Book from './chapter3/Book';
+import Reservation from './chapter11/11.4/Reservation';
+import ReservationFactory from './chapter11/11.4/ReservationFactory';
 
 
 
@@ -42,6 +45,7 @@ root.render(
     // 3장 예제
   //  <JsxUse />
   // <Library />
+  // <Book />
   
   // 4장 예제
   // <Clock />
@@ -89,7 +93,9 @@ root.render(
   // <NameForm />
   // <EssayForm />
   // <FileInput />
-  <FlavorForm />
+  // <FlavorForm />
+  // <Reservation />
+  <ReservationFactory />
 );
 
 // If you want to start measuring performance in your app, pass a function
