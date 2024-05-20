@@ -31,6 +31,7 @@ import FlavorForm from './chapter11/11.3/FlavorForm';
 import Book from './chapter3/Book';
 import Reservation from './chapter11/11.4/Reservation';
 import ReservationFactory from './chapter11/11.4/ReservationFactory';
+import SimpleRouter from './chapter16/SimpleRouter';
 
 
 
@@ -95,7 +96,11 @@ root.render(
   // <FileInput />
   // <FlavorForm />
   // <Reservation />
-  <ReservationFactory />
+  // <ReservationFactory />
+
+
+  // 16장
+  <SimpleRouter />
 );
 
 // If you want to start measuring performance in your app, pass a function
