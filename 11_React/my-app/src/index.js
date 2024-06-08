@@ -32,6 +32,8 @@ import Book from './chapter3/Book';
 import Reservation from './chapter11/11.4/Reservation';
 import ReservationFactory from './chapter11/11.4/ReservationFactory';
 import SimpleRouter from './chapter16/SimpleRouter';
+import CounterEffect from './chapter7/7.3/ex1/CounterEffect';
+import EffectContainer from './chapter7/7.3/ex3/EffectContainer';
 
 
 
@@ -66,6 +68,9 @@ root.render(
 
   // 7장
   // <Counter />
+  // <CounterEffect />
+  <EffectContainer />
+  
   // <TextInputWithFocusButton />
 
   // 8장
@@ -100,7 +105,7 @@ root.render(
 
 
   // 16장
-  <SimpleRouter />
+  // <SimpleRouter />
 );
 
 // If you want to start measuring performance in your app, pass a function
