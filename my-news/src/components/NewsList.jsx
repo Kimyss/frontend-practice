@@ -24,15 +24,24 @@ function NewsList() {
   // 리액트 엘리먼트 배열로 변환하여 렌더링하는 컴포넌트
 
   const [article, setArticle] = useState(null);
+  const [loadinging, setLoadinging] = useState(false);
 
   useEffect(() => {
     const fetchNewData = async () => {
+      setLoadinging(true);
       const response = await axios.get('https://newsapi.org/v2/top-headlines?country=kr&apiKey=087116c618384ac38b3e508cdcc67386');
       console.log(response.data.articles);
       setArticle(response.data.articles);
+      setLoadinging(false);
     };
     fetchNewData();
   }, []);
+
+  if (loadinging) {
+    return <NewsListBlock>
+      로딩중 !!
+    </NewsListBlock>
+  }
   return (
     <NewsListBlock>
       {article && article.map((article) => {
