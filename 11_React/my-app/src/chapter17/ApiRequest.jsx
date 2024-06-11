@@ -7,7 +7,6 @@ function ApiRequest() {
   const handleRequestbyId = (id) => {
     axios.get(`https://jsonplaceholder.typicode.com/photos/${id}`)
       .then((response) => {
-        console.log(response);
         setData(response.data)
       })
       .catch((error) => {
@@ -15,11 +14,21 @@ function ApiRequest() {
       });
   };
 
+  const handleRequestbyIdAsync = async (id) => {
+    try {
+      const response = await axios.get(`https://jsonplaceholder.typicode.com/photos/${id}`)
+      setData(response.data)
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   return (
     <>
       <div>
         <button type="button" onClick={() => { handleRequestbyId(21) }}>불러오기</button>
         <button type="button" onClick={() => { setData(null) }}>비우기</button>
+        <button type="button" onClick={() => { handleRequestbyIdAsync(10) }}>불러오기Asyncwait</button>
       </div>
 
       {data && (

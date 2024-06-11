@@ -1,6 +1,15 @@
-import { Col, Container, Row } from "react-bootstrap";
 import yoImg from "../images/yonex.jpg";
+
+import { Col, Container, Row } from "react-bootstrap";
 import { styled } from "styled-components";
+import { useEffect } from "react";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { getAllProducts } from "../features/product/productSlice";
+
+
+
+
 const MainBackground = styled.div`
   height: 500px;
   background-image: url(${yoImg});
@@ -10,33 +19,32 @@ const MainBackground = styled.div`
 `
 
 function Main() {
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    axios.get("https://my-json-server.typicode.com/kimyss/db-shop/products")
+      .then((response) => {
+        dispatch(getAllProducts(response.data));
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []); //의존성? 마운트? 한번만?
+
   return (
     <>
       <section>
         <MainBackground />
       </section>
 
-      <Container>
-        <Row>
-          {/* 부트스트랩을 이용한 반응형 작업*/}
-          {/* md >= 768px 이상에서 전체 12등분 중 4:4:4로 보여줌 */}
-          <Col>
-            <img src="https://www.yonexmall.com/shop/data/goods/1645767865278s0.png" width="80%" />
-            <h4>상품명</h4>
-            <p>상품가격</p>
-          </Col>
-          <Col md={4}>
-            <img src="https://www.yonexmall.com/shop/data/goods/1659329583483s0.png" width="80%" />
-            <h4>상품명</h4>
-            <p>상품가격</p>
-          </Col>
-          <Col md={4}>
-            <img src="https://www.yonexmall.com/shop/data/goods/1667190100104s0.png" width="80%" />
-            <h4>상품명</h4>
-            <p>상품가격</p>
-          </Col>
-        </Row>
-      </Container>
+      <section>
+        <Container>
+          <Row>
+
+          </Row>
+        </Container>
+      </section>
     </>
   );
 };
