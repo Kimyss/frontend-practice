@@ -7,6 +7,7 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts, selectproductList } from "../features/product/productSlice";
 import ProductItem from "../components/ProductItem";
+import { Container, Row } from "react-bootstrap";
 
 
 
@@ -22,7 +23,6 @@ const MainBackground = styled.div`
 function Main() {
 
   const dispatch = useDispatch();
-
   const productList = useSelector(selectproductList);
 
   useEffect(() => {
@@ -33,7 +33,7 @@ function Main() {
       .catch((err) => {
         console.error(err);
       });
-  }, []); //의존성? 마운트? 한번만?
+  }, []);
 
   return (
     <>
@@ -41,11 +41,14 @@ function Main() {
         <MainBackground />
       </section>
 
-
       <section>
-        {productList.map((product)=>{
-          return <ProductItem  key={product.id} id={product.id} name={product.name} price={product.price} />
-        })}
+        <Container>
+          <Row>
+            {productList.map((product) => {
+              return <ProductItem key={product.id} product={product} />
+            })}
+          </Row>
+        </Container>
       </section>
     </>
   );

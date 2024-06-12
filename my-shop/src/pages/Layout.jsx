@@ -15,7 +15,9 @@ function Layout() {
           </Container>
         </Navbar>
       </header>
+
       <Outlet />
+
       <footer>
         <p className="py-5 mb-0 bg-dark text-white">
           &copy; 요넥스콤패니. All Rights Reserved.

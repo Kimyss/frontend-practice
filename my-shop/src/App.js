@@ -4,6 +4,7 @@ import Layout from './pages/Layout';
 import { createGlobalStyle } from "styled-components";
 import { Route, Routes } from "react-router-dom";
 import Main from './pages/Main';
+import ProductDetail from './pages/ProductDetail';
 
 
 
@@ -33,8 +34,9 @@ function App() {
     <>
       <GlobalStyle />
       <Routes>
-        <Route path='/' element={<Layout />}>
+        <Route path="/" element={<Layout />}>
           <Route index element={<Main />} />
+          <Route path='detail/:productId' element={<ProductDetail />} />
         </Route>
       </Routes>
     </>
