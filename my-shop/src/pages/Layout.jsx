@@ -7,7 +7,7 @@ function Layout() {
       <header>
         <Navbar bg="dark" data-bs-theme="dark">
           <Container>
-            <Navbar.Brand href="#home">시기샵</Navbar.Brand>
+            <Navbar.Brand href="#home">요넥스샵</Navbar.Brand>
             <Nav className="me-auto">
               <Nav.Link>홈</Nav.Link>
               <Nav.Link >장바구니</Nav.Link>
@@ -18,7 +18,7 @@ function Layout() {
       <Outlet />
       <footer>
         <p className="py-5 mb-0 bg-dark text-white">
-          &copy; KYS Company. All Rights Reserved.
+          &copy; 요넥스콤패니. All Rights Reserved.
         </p>
       </footer>
     </>

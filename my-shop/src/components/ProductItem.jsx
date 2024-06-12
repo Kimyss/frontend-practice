@@ -1,12 +1,12 @@
 import { Col } from "react-bootstrap";
 
-function ProductItem() {
+function ProductItem({ id, name, price }) {
   return (
     <>
-      <Col md={4}>
+      <Col md={4} key={id}>
         <img src="https://www.yonexmall.com/shop/data/goods/1667190100104s0.png" width="80%" />
-        <h4>상품명</h4>
-        <p>상품가격</p>
+        <h4>{name}</h4>
+        <p>{price}</p>
       </Col>
     </>
   );

@@ -1,11 +1,12 @@
 import yoImg from "../images/yonex.jpg";
 
-import { Col, Container, Row } from "react-bootstrap";
+
 import { styled } from "styled-components";
 import { useEffect } from "react";
 import axios from "axios";
-import { useDispatch } from "react-redux";
-import { getAllProducts } from "../features/product/productSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllProducts, selectproductList } from "../features/product/productSlice";
+import ProductItem from "../components/ProductItem";
 
 
 
@@ -21,6 +22,8 @@ const MainBackground = styled.div`
 function Main() {
 
   const dispatch = useDispatch();
+
+  const productList = useSelector(selectproductList);
 
   useEffect(() => {
     axios.get("https://my-json-server.typicode.com/kimyss/db-shop/products")
@@ -38,12 +41,11 @@ function Main() {
         <MainBackground />
       </section>
 
-      <section>
-        <Container>
-          <Row>
 
-          </Row>
-        </Container>
+      <section>
+        {productList.map((product)=>{
+          return <ProductItem  key={product.id} id={product.id} name={product.name} price={product.price} />
+        })}
       </section>
     </>
   );
