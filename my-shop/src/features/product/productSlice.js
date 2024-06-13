@@ -16,12 +16,17 @@ const productSlice = createSlice({
     },
     getSeletedProduct: (state, action) => {
       state.selectproduct = action.payload;
+    },
+    clearSelectedProduct: (state) => {
+      state.selectproduct = null;
     }
   }
 });
 
-export const { getAllProducts, getSeletedProduct } = productSlice.actions;
+export const { getAllProducts, getSeletedProduct, clearSelectedProduct } = productSlice.actions;
 
-export const selectproductList = (state) => state.product.productList;
+export const selectProductList = (state) => state.product.productList;
+
+export const selectproductItem = (state) => state.product.selectproduct;
 
 export default productSlice.reducer;

@@ -5,7 +5,7 @@ import { styled } from "styled-components";
 import { useEffect } from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllProducts, selectproductList } from "../features/product/productSlice";
+import { getAllProducts, selectProductList } from "../features/product/productSlice";
 import ProductItem from "../components/ProductItem";
 import { Container, Row } from "react-bootstrap";
 
@@ -23,7 +23,7 @@ const MainBackground = styled.div`
 function Main() {
 
   const dispatch = useDispatch();
-  const productList = useSelector(selectproductList);
+  const productList = useSelector(selectProductList);
 
   useEffect(() => {
     axios.get("https://my-json-server.typicode.com/kimyss/db-shop/products")
