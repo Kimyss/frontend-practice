@@ -25,6 +25,8 @@ function Main() {
   const dispatch = useDispatch();
   const productList = useSelector(selectProductList);
 
+
+
   useEffect(() => {
     axios.get("https://my-json-server.typicode.com/kimyss/db-shop/products")
       .then((response) => {
